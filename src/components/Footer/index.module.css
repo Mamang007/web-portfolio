@@ -1,0 +1,38 @@
+.input-box {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.input-box input:valid ~ span,
+.input-box input:focus ~ span {
+  color: #15212d;
+  transform: translateX(10px) translateY(-5px);
+  font-size: 0.45em;
+  padding: 0 10px;
+  background: #dce5e7;
+  letter-spacing: 0.3em;
+  /* border-left: 1px solid #00dfc4;
+  border-right: 1px solid #00dfc4; */
+}
+
+.textarea-box {
+  position: relative;
+  width: 100%;
+}
+
+.textarea-box span {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  text-transform: capitalize;
+  transition: 0.3s;
+  color: #15212d;
+  transform: translateX(10px) translateY(-5px);
+  font-size: 0.45em;
+  padding: 0 10px;
+  background: #dce5e7;
+  letter-spacing: 0.2em;
+  border-left: 1px solid #00dfc4;
+  border-right: 1px solid #00dfc4;
+}
