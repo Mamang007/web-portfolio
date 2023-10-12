@@ -13,7 +13,7 @@ export default function Navbar({ onDarkMode }) {
           <BsFillMoonStarsFill onClick={onDarkMode} className="cursor-pointer dark:text-white" />
         </li>
         <li>
-          <a className="bg-gradient-to-r from-cyan-500 to-teal-700 text-sm md:text-lg text-white px-4 py-2 rounded-md ml-3 md:ml-8" href="./resume.pdf" target="_blank" rel="noreference">
+          <a className="bg-gradient-to-r from-cyan-500 to-teal-700 text-sm md:text-lg text-white px-4 py-2 rounded-md ml-3 md:ml-8" href="./resume.pdf" target="_blank" rel="noreferrer">
             Resume
           </a>
         </li>

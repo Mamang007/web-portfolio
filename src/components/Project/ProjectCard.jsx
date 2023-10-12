@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
 import Modal from "./Modal";
 
-export default function ProjectCard({ title, imgUrl, stack, modalImg }) {
+export default function ProjectCard({ title, imgUrl, stack, githubURL, liveURL, modalImg }) {
   const [isModal, setIsModal] = useState(false);
 
   const showModal = () => {
@@ -15,7 +16,7 @@ export default function ProjectCard({ title, imgUrl, stack, modalImg }) {
         <div className="flex justify-center aspect-video">
           <img src={imgUrl} className="rounded-t-lg" />
         </div>
-        <div className="p-5">
+        <div className="flex justify-between p-5">
           <h1 className="text-2xl font-bold tracking-wider" style={{ fontFamily: "Bebas Neue, sans-serif" }}>
             {title}
           </h1>
@@ -25,6 +26,18 @@ export default function ProjectCard({ title, imgUrl, stack, modalImg }) {
               <path stroke="currentColor" d="M1 5h12m0 0L9 1m4 4L9 9" />
             </svg>
           </button>
+        </div>
+        <div className="flex justify-end gap-2 px-5">
+          {liveURL ? (
+            <a className="flex items-center gap-2 bg-blue-600 hover:bg-blue-800 text-sm text-white text-center px-4 py-2 rounded-md" href={liveURL} target="_blank" rel="noreferrer">
+              Live <AiOutlineLink />
+            </a>
+          ) : null}
+          {githubURL ? (
+            <a className="flex items-center gap-2 bg-blue-600 hover:bg-blue-800 text-sm text-white text-center px-4 py-2 rounded-md" href={githubURL} target="_blank" rel="noreferrer">
+              GitHub <AiOutlineGithub />
+            </a>
+          ) : null}
         </div>
         <div className="flex flex-wrap px-6 pt-4 pb-2">
           {stack.map((stack, index) => {

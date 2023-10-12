@@ -60,19 +60,23 @@ import pernImg18 from "../assets/pern-img/18.png";
 import pernImg19 from "../assets/pern-img/19.png";
 import pernImg20 from "../assets/pern-img/20.png";
 
-const data = [
+export const data = [
   {
     id: 1,
     title: "Customizer T-Shirt",
     imgUrl: img1,
-    stack: ["#React"],
+    stack: ["#React", "#ThreeJS"],
+    githubURL: "https://github.com/Mamang007/threejs",
+    liveURL: "https://custom-shirt-ae357.web.app/",
     modalImg: [shirtImg1, shirtImg2, shirtImg3, shirtImg4, shirtImg5, shirtImg6, shirtImg7, shirtImg8, shirtImg9, shirtImg10, shirtImg11, shirtImg12, shirtImg13, shirtImg14, shirtImg15, shirtImg16, shirtImg17],
   },
   {
     id: 2,
     title: "Game Center",
     imgUrl: img2,
-    stack: ["#NextJS", "#Tailwind"],
+    stack: ["#React", "#Tailwind"],
+    githubURL: "https://github.com/Mamang007/game-center",
+    liveURL: "https://game-center-007.web.app/",
     modalImg: [gameImg1, gameImg2, gameImg3, gameImg4, gameImg5, gameImg6, gameImg7, gameImg8, gameImg9, gameImg10, gameImg11, gameImg12, gameImg13, gameImg14, gameImg15],
   },
   {
@@ -80,8 +84,8 @@ const data = [
     title: "PERN Stack App",
     imgUrl: img3,
     stack: ["#HTML", "#CSS", "#NodeJs", "#ExpressJS"],
+    githubURL: "https://github.com/Mamang007/PERN-Stack",
+    liveURL: false,
     modalImg: [pernImg1, pernImg2, pernImg3, pernImg4, pernImg5, pernImg6, pernImg7, pernImg8, pernImg9, pernImg10, pernImg11, pernImg12, pernImg13, pernImg14, pernImg15, pernImg16, pernImg17, pernImg18, pernImg19, pernImg20],
   },
 ];
-
-export default data;
