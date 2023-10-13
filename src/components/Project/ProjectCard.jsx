@@ -10,9 +10,22 @@ export default function ProjectCard({ title, imgUrl, stack, githubURL, liveURL, 
     isModal ? (document.body.style.overflow = "auto") : (document.body.style.overflow = "hidden");
   };
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".hide");
+  hiddenElements.forEach((e) => observer.observe(e));
+
   return (
     <>
-      <div className="w-[80%] sm:w-[60%] md:w-[40%] bg-snow-200 dark:bg-forest-200 rounded-lg shadow-lg p-3 ">
+      <div className="hide w-[80%] sm:w-[60%] md:w-[40%] bg-snow-200 dark:bg-forest-200 rounded-lg shadow-lg p-3 ">
         <div className="flex justify-center aspect-video">
           <img src={imgUrl} className="rounded-t-lg" />
         </div>

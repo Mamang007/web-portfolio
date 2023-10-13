@@ -1,33 +1,27 @@
 import { AiFillGithub, AiFillLinkedin, AiFillInstagram, AiOutlineWhatsApp } from "react-icons/ai";
-import PropTypes from "prop-types";
 import profilePicture from "../assets/profile-picture.png";
-
-// Memberikan Animasi ketika Scroll
-// const callback = function (entries) {
-//   entries.forEach((entry) => {
-//     console.log(entry);
-
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add("animate-fadeIn");
-//     } else {
-//       entry.target.classList.remove("animate-fadeIn");
-//     }
-//   });
-// };
-
-// const observer = new IntersectionObserver(callback);
-
-// const targets = document.querySelectorAll(".js-show-on-scroll");
-// targets.forEach(function (target) {
-//   target.classList.add("opacity-0");
-//   observer.observe(target);
-// });
 
 export default function Banner({ name, role, desc }) {
   const photo = profilePicture;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  setTimeout(() => {
+    const hiddenElements = document.querySelectorAll(".hide");
+    hiddenElements.forEach((e) => observer.observe(e));
+  }, 100);
+
   return (
-    <div className="bg-snow-100 dark:bg-forest-100 text-snow-400 dark:text-forest-400 flex flex-wrap-reverse items-center justify-evenly text-center sm:text-left px-20">
-      <div className="sm:w-1/2">
+    <div className="bg-snow-100 dark:bg-forest-100 text-snow-400 dark:text-forest-400 h-[60vh] flex flex-wrap-reverse items-center justify-evenly text-center sm:text-left px-20">
+      <div className="sm:w-1/2 hide">
         <h2 className="text-4xl md:text-5xl lg:text-6xl py-2 font-bold" style={{ fontFamily: "Lato, sans-serif" }}>
           {name}
         </h2>
@@ -60,7 +54,7 @@ export default function Banner({ name, role, desc }) {
           </a>
         </div>
       </div>
-      <div className="sm:w-1/2 flex justify-center">
+      <div className="sm:w-1/2 flex justify-center hide">
         <div className="relative object-contain w-48 h-40 md:w-60 md:h-52 lg:w-72 lg:h-64 rounded-full bg-gradient-to-b from-forest-300">
           <img src={photo} className="absolute object-contain w-48 md:w-60 lg:w-72 left-3 -top-7" />
         </div>
@@ -68,9 +62,3 @@ export default function Banner({ name, role, desc }) {
     </div>
   );
 }
-
-Banner.propTypes = {
-  name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
-};
