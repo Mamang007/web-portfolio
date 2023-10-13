@@ -20,7 +20,7 @@ export default function Banner({ name, role, desc }) {
   }, 100);
 
   return (
-    <div className="bg-snow-100 dark:bg-forest-100 text-snow-400 dark:text-forest-400 h-[60vh] flex flex-wrap-reverse items-center justify-evenly text-center sm:text-left px-20">
+    <div className="bg-snow-100 dark:bg-forest-100 text-snow-400 dark:text-forest-400 flex flex-wrap-reverse items-center justify-evenly text-center sm:text-left px-20">
       <div className="sm:w-1/2 hide">
         <h2 className="text-4xl md:text-5xl lg:text-6xl py-2 font-bold" style={{ fontFamily: "Lato, sans-serif" }}>
           {name}
