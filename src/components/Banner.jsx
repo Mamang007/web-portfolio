@@ -54,7 +54,7 @@ export default function Banner({ name, role, desc }) {
           </a>
         </div>
       </div>
-      <div className="sm:w-1/2 flex justify-center hide">
+      <div className="sm:w-1/2 flex justify-center hide" style={{ "--delay": "2" }}>
         <div className="relative object-contain w-48 h-40 md:w-60 md:h-52 lg:w-72 lg:h-64 rounded-full bg-gradient-to-b from-forest-300">
           <img src={photo} className="absolute object-contain w-48 md:w-60 lg:w-72 left-3 -top-7" />
         </div>
